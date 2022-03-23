@@ -1,5 +1,5 @@
 import os, logging, asyncio
-from telethon import Button
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from telethon import TelegramClient, events
 from telethon.tl.types import ChannelParticipantAdmin
 from telethon.tl.types import ChannelParticipantCreator
@@ -23,25 +23,13 @@ async def start(event):
   await event.reply(
     "__**𝐈'𝐦 📌sᴀɴᴛʜᴜ ᴍᴇɴᴛɪᴏɴ ʙᴏᴛ**, 𝐢 𝐂𝐚𝐧 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐀𝐥𝐥 𝐌𝐞𝐦𝐛𝐞𝐫𝐬 𝐈𝐧 𝐆𝐫𝐨𝐮𝐩 𝐎𝐫 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 👻\n𝐂𝐥𝐢𝐜𝐤 **/help** 𝐅𝐨𝐫 𝐌𝐨𝐫𝐞 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧__\n\n 𝐅𝐨𝐥𝐥𝐨𝐰 [sᴀɴᴛʜᴏsʜ](https://t.me/santhu_music_bot) ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ",
     link_preview=False, 
-    buttons=(  
-      [
-                [
-                    InlineKeyboardButton(
-                        "💞ᴀʀʏᴀ ɴɪ ᴀᴅᴅ ᴄʜᴇsᴜᴋᴏɴᴅɪ💞", url="https://t.me/Santhugroupmentionbot?startgroup=true")
-                  ],[
-                    InlineKeyboardButton(
-                        "☹️ᴏᴡɴᴇʀ😘", url="https://t.me/santhu_music_bot"
-                    ),
-                    InlineKeyboardButton(
-                        "😇ɢʀᴏᴜᴘ💞", url="https://t.me/santhuvc"
-                    )
-                ],[ 
-                    InlineKeyboardButton(
-                        "😁ɴᴇᴛᴡᴏʀᴋ😊", url="https://t.me/santhubotupadates"
-                    )]
-            ]
-       ),
-    )
+    reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("🔥sᴜᴘᴘᴏʀᴛ💖", url="https://t.me/santhuvc"), 
+            InlineKeyboardButton("💘ᴄʜᴀɴɴᴇʟ💝", url="https://t.me/santhubotupadates"), 
+            InlineKeyboardButton("🔰ᴅᴏɴᴀᴛᴇ🔰", url="https://t.me/santhu_music_bot")
+            ],[
+            InlineKeyboardButton("➕𝐀𝐃𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏➕", url="https://t.me/Santhutagallbot?startgroup=true")
+            ]]
     
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):

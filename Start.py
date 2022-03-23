@@ -30,6 +30,7 @@ async def start(event):
             ],[
             InlineKeyboardButton("➕𝐀𝐃𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏➕", url="https://t.me/Santhutagallbot?startgroup=true")
             ]]
+         ) 
     
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):

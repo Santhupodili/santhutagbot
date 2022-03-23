@@ -1,5 +1,6 @@
 #SanthoshPodili
 telethon
+pyrogram
 cryptg
 asyncio
 telegraph

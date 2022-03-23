@@ -39,14 +39,16 @@ async def help(event):
   await event.reply(
     helptext,
     link_preview=False,
-    buttons=(
-      [
-        Button.url('💞ᴏᴡɴᴇʀ😻', 'https://t.me/santhu_music_bot'),
-        Button.url('💞ɴᴇᴛᴡᴏʀᴋ💓', 'https://t.me/santhuvc')
-      ]
-    )
-  )
-  
+    reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("🔥sᴜᴘᴘᴏʀᴛ💖", url="https://t.me/santhuvc"), 
+            InlineKeyboardButton("💘ᴄʜᴀɴɴᴇʟ💝", url="https://t.me/santhubotupadates"), 
+            InlineKeyboardButton("🔰ᴅᴏɴᴀᴛᴇ🔰", url="https://t.me/santhu_music_bot")
+            ],[
+            InlineKeyboardButton("➕𝐀𝐃𝐃 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏➕", url="https://t.me/Santhutagallbot?startgroup=true")
+            ]]
+         ) 
+      )
+      
 @client.on(events.NewMessage(pattern="^@all ?(.*)"))
 async def all(event):
   chat_id = event.chat_id
